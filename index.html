@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>JP STUDIOS — Not a brand. A mindset.</title>
+<meta name="description" content="Streetwear con identidad. Diseños que destacan. No es moda, es actitud."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#000000;
+  --dark:#080808;
+  --dark2:#0D0D0D;
+  --dark3:#141414;
+  --dark4:#1C1C1C;
+  --gold:#C9A84C;
+  --gold-light:#E5C46A;
+  --white:#F5F2EC;
+  --muted:#555;
+  --muted2:#333;
+  --border:#1E1E1E;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+/* ── TICKER ── */
+.ticker{overflow:hidden;white-space:nowrap;background:var(--gold);padding:8px 0}
+.ticker-inner{
+  display:inline-block;
+  animation:tick 22s linear infinite;
+  font-size:10px;font-weight:700;
+  color:#000;letter-spacing:3px;text-transform:uppercase;
+}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(0,0,0,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+  transition:background .3s;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;
+}
+.logo-mark{
+  width:36px;height:36px;
+  background:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  clip-path:polygon(20% 0%,80% 0%,100% 20%,100% 80%,80% 100%,20% 100%,0% 80%,0% 20%);
+}
+.logo-mark span{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:15px;color:#000;letter-spacing:-1px;
+}
+.logo-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20px;color:var(--white);letter-spacing:4px;
+}
+.nav-links{display:flex;gap:2.5rem}
+.nav-link{
+  font-size:11px;color:var(--muted);
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;transition:color .2s;
+}
+.nav-link:hover{color:var(--white)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn-cart{
+  background:transparent;color:var(--white);
+  border:1px solid var(--border);
+  padding:7px 16px;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  display:flex;align-items:center;gap:8px;
+  transition:border-color .2s,background .2s;
+}
+.btn-cart:hover{border-color:var(--gold);color:var(--gold)}
+.btn-wa-nav{
+  background:var(--gold);color:#000;border:none;
+  padding:7px 16px;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  display:flex;align-items:center;gap:6px;
+  transition:background .2s;
+}
+.btn-wa-nav:hover{background:var(--gold-light)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+  margin-top:0;padding-top:60px;
+}
+.hero-left{
+  background:var(--dark2);
+  display:flex;flex-direction:column;
+  justify-content:flex-end;padding:4rem 3rem;
+  position:relative;overflow:hidden;
+}
+.hero-left-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.2) 100%),
+    url('https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=900&q=80&fit=crop') center/cover no-repeat;
+}
+.hero-right{
+  background:var(--dark3);
+  position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:4rem 3rem;
+}
+.hero-right-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 60%,transparent 100%),
+    url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=900&q=80&fit=crop') center/cover no-repeat;
+}
+/* Geometric pattern for right side */
+.hero-right-pattern{
+  position:absolute;inset:0;overflow:hidden;
+}
+.hero-right-pattern::before{
+  content:'';
+  position:absolute;
+  top:-20%;left:-10%;
+  width:120%;height:140%;
+  background:repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(201,168,76,.03) 40px,
+    rgba(201,168,76,.03) 41px
+  );
+}
+.hero-grid-text{
+  position:absolute;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:220px;color:rgba(255,255,255,.025);
+  letter-spacing:-10px;line-height:1;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
+}
+.hero-tag{
+  font-size:10px;color:var(--gold);
+  letter-spacing:4px;text-transform:uppercase;
+  font-weight:700;margin-bottom:1.5rem;
+  position:relative;z-index:2;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-tag::before{content:'⚔';font-size:12px}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:72px;line-height:.9;
+  color:var(--white);
+  text-transform:uppercase;
+  letter-spacing:-1px;
+  position:relative;z-index:2;
+  margin-bottom:1.5rem;
+}
+.hero-title em{color:var(--gold);font-style:normal}
+.hero-sub{
+  font-size:13px;color:rgba(245,242,236,.5);
+  line-height:1.7;max-width:320px;
+  position:relative;z-index:2;margin-bottom:2.5rem;
+}
+.hero-cta-row{display:flex;gap:12px;position:relative;z-index:2}
+.btn-primary{
+  background:var(--gold);color:#000;border:none;
+  padding:14px 32px;font-size:12px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  transition:background .2s,transform .15s;
+}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-outline{
+  background:transparent;color:var(--white);
+  border:1px solid rgba(255,255,255,.2);
+  padding:14px 28px;font-size:12px;
+  letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  transition:border-color .2s;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Right hero content */
+.hero-right-content{position:relative;z-index:2}
+.hero-quote{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;line-height:.92;
+  color:var(--white);
+  text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.hero-quote span{
+  display:block;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(245,242,236,.25);
+}
+.hero-stat-row{display:flex;gap:2rem;margin-top:2rem}
+.hero-stat{border-left:2px solid var(--gold);padding-left:12px}
+.hero-stat-n{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;color:var(--gold);
+}
+.hero-stat-l{font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+
+/* Scroll indicator */
+.scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  z-index:5;
+}
+.scroll-hint span{font-size:9px;color:var(--muted);letter-spacing:3px;text-transform:uppercase}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollfade 1.8s ease-in-out infinite}
+@keyframes scrollfade{0%,100%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+/* ── MANIFESTO BAND ── */
+.manifesto{
+  background:var(--gold);
+  padding:5rem 2.5rem;
+  position:relative;overflow:hidden;
+}
+.manifesto::before{
+  content:'';position:absolute;
+  right:-5%;top:-30%;
+  width:50%;height:160%;
+  background:rgba(0,0,0,.08);
+  transform:skewX(-8deg);
+}
+.manifesto-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.manifesto-label{
+  font-size:10px;color:rgba(0,0,0,.5);
+  letter-spacing:4px;text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.manifesto-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(42px,6vw,72px);
+  line-height:.92;color:#000;
+  text-transform:uppercase;
+  letter-spacing:-1px;
+}
+.manifesto-text em{
+  font-style:normal;
+  color:transparent;
+  -webkit-text-stroke:2px #000;
+}
+.manifesto-sub{
+  font-size:14px;color:rgba(0,0,0,.6);
+  margin-top:2rem;max-width:480px;line-height:1.7;
+}
+
+/* ── COLLECTIONS ── */
+.collections{padding:5rem 2.5rem;background:var(--black)}
+.section-header{max-width:1100px;margin:0 auto 3.5rem}
+.section-label{
+  font-size:10px;color:var(--gold);
+  letter-spacing:4px;text-transform:uppercase;
+  margin-bottom:.75rem;
+}
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:48px;color:var(--white);
+  text-transform:uppercase;letter-spacing:-1px;
+}
+.section-desc{
+  font-size:13px;color:var(--muted);
+  margin-top:.75rem;max-width:400px;line-height:1.7;
+}
+
+.collections-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:2px;max-width:1100px;margin:0 auto;
+}
+
+/* Featured first card - spans 2 rows */
+.col-card{
+  background:var(--dark2);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+  transition:transform .3s;
+}
+.col-card:hover{transform:scale(.99)}
+.col-card:hover .col-overlay{opacity:1}
+.col-card:hover .col-btn{opacity:1;transform:translateY(0)}
+.col-card.featured{grid-row:span 2}
+
+.col-bg{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.col-bg-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,12vw,140px);
+  color:rgba(255,255,255,.04);
+  letter-spacing:-4px;text-transform:uppercase;
+  white-space:nowrap;
+  transform:rotate(-8deg);
+  pointer-events:none;
+  user-select:none;
+}
+.col-accent{
+  position:absolute;
+  top:0;left:0;right:0;height:3px;
+}
+.col-body{
+  position:relative;z-index:2;
+  padding:2rem;
+  height:100%;min-height:320px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.col-card.featured .col-body{min-height:640px}
+.col-tag{
+  font-size:9px;color:var(--gold);
+  letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:.75rem;font-weight:700;
+}
+.col-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;color:var(--white);
+  text-transform:uppercase;letter-spacing:-1px;
+  line-height:.95;margin-bottom:.75rem;
+}
+.col-card.featured .col-name{font-size:52px}
+.col-desc{
+  font-size:12px;color:rgba(245,242,236,.45);
+  line-height:1.65;margin-bottom:1.25rem;
+  max-width:260px;
+}
+.col-meta{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:1rem;
+}
+.col-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;color:var(--white);
+}
+.col-variants{display:flex;gap:5px;flex-wrap:wrap}
+.variant-dot{
+  width:18px;height:18px;
+  border-radius:50%;border:1px solid rgba(255,255,255,.2);
+  cursor:pointer;transition:border-color .15s;
+}
+.variant-dot:hover{border-color:var(--gold)}
+
+.col-btn{
+  background:var(--gold);color:#000;border:none;
+  padding:10px 20px;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,background .2s;
+  align-self:flex-start;
+}
+.col-btn:hover{background:var(--gold-light)}
+.col-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%);
+  opacity:0;transition:opacity .3s;z-index:1;
+}
+.col-badge{
+  position:absolute;top:1.25rem;right:1.25rem;z-index:3;
+  background:var(--gold);color:#000;
+  font-size:8px;font-weight:700;
+  padding:4px 10px;letter-spacing:2px;text-transform:uppercase;
+}
+.col-badge.outline{
+  background:transparent;color:var(--gold);
+  border:1px solid var(--gold);
+}
+
+/* Card color themes */
+.theme-dark{background:#0A0A0A}
+.theme-mid{background:#111}
+.theme-warm{background:#0F0D0A}
+
+/* ── IDENTITY STRIP ── */
+.identity{
+  background:var(--dark2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:4rem 2.5rem;
+}
+.identity-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+}
+.identity-visual{
+  position:relative;
+  height:400px;
+  background:var(--dark3);
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.identity-visual::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.2) 60%,transparent 100%),
+    url('https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=700&q=80&fit=crop') center/cover no-repeat;
+}
+.identity-visual-bg{
+  position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 60px,
+      rgba(201,168,76,.04) 60px,
+      rgba(201,168,76,.04) 61px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(201,168,76,.04) 60px,
+      rgba(201,168,76,.04) 61px
+    );
+}
+.logo-large{
+  position:relative;z-index:2;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:120px;color:rgba(255,255,255,.06);
+  letter-spacing:-4px;
+  text-align:center;line-height:1;
+}
+.logo-center{
+  position:absolute;z-index:3;
+  text-align:center;
+}
+.logo-jp{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:72px;color:var(--white);
+  letter-spacing:-2px;line-height:1;
+}
+.logo-studios{
+  font-size:12px;color:var(--gold);
+  letter-spacing:6px;text-transform:uppercase;
+  margin-top:4px;
+}
+.identity-divider{
+  width:40px;height:2px;background:var(--gold);
+  margin:1.5rem 0;
+}
+.identity-phrase{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:42px;color:var(--white);
+  text-transform:uppercase;line-height:.92;
+  letter-spacing:-1px;margin-bottom:1.5rem;
+}
+.identity-phrase span{color:var(--gold)}
+.identity-list{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.identity-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--border);
+}
+.identity-item:last-child{border-bottom:none}
+.identity-icon{
+  width:28px;height:28px;background:var(--gold);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:#000;margin-top:1px;
+}
+.identity-item-title{
+  font-size:13px;font-weight:700;color:var(--white);
+  margin-bottom:3px;
+}
+.identity-item-sub{
+  font-size:12px;color:var(--muted);line-height:1.6;
+}
+
+/* ── SETS SHOWCASE ── */
+.sets{padding:5rem 2.5rem;background:var(--black)}
+.sets-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:2px;max-width:1100px;margin:0 auto;
+}
+.set-card{
+  background:var(--dark2);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+  transition:transform .25s;
+}
+.set-card:hover{transform:scale(.98)}
+.set-card:hover .set-btn{opacity:1}
+.set-bg{
+  height:260px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.set-bg-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:80px;color:rgba(255,255,255,.04);
+  letter-spacing:-3px;
+  transform:rotate(-15deg);
+  pointer-events:none;
+  position:absolute;
+}
+.set-thumb{
+  position:relative;z-index:1;
+  width:90px;height:90px;
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+}
+.set-thumb-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;color:rgba(255,255,255,.2);
+}
+.set-stock{
+  position:absolute;bottom:10px;right:10px;
+  font-size:8px;font-weight:700;color:var(--gold);
+  letter-spacing:2px;text-transform:uppercase;
+  background:rgba(0,0,0,.7);padding:3px 8px;
+}
+.set-body{padding:14px 16px 16px}
+.set-collection{
+  font-size:9px;color:var(--muted);
+  letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:5px;
+}
+.set-name{
+  font-size:14px;color:var(--white);
+  font-weight:700;margin-bottom:10px;
+  line-height:1.3;
+}
+.set-footer{display:flex;justify-content:space-between;align-items:center}
+.set-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:20px;color:var(--white);
+}
+.set-btn{
+  background:var(--dark4);border:1px solid var(--border);
+  color:var(--muted);padding:6px 12px;
+  font-size:10px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  opacity:0;transition:opacity .2s,background .2s,color .2s;
+}
+.set-btn:hover{background:var(--gold);color:#000;border-color:var(--gold)}
+
+/* ── PROCESS ── */
+.process{
+  background:var(--dark2);
+  border-top:1px solid var(--border);
+  padding:4rem 2.5rem;
+}
+.process-inner{max-width:1100px;margin:0 auto}
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;margin-top:3rem;
+}
+.process-step{
+  padding:2rem;
+  border-right:1px solid var(--border);
+  position:relative;
+}
+.process-step:last-child{border-right:none}
+.process-n{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:56px;color:rgba(201,168,76,.15);
+  line-height:1;margin-bottom:.75rem;
+}
+.process-title{
+  font-size:13px;font-weight:700;color:var(--white);
+  margin-bottom:.5rem;text-transform:uppercase;
+  letter-spacing:1px;
+}
+.process-desc{
+  font-size:12px;color:var(--muted);line-height:1.7;
+}
+
+/* ── WA CTA ── */
+.wa-cta{
+  background:var(--gold);
+  padding:4rem 2.5rem;
+  position:relative;overflow:hidden;
+}
+.wa-cta::before{
+  content:'WA';
+  position:absolute;right:5%;top:50%;
+  transform:translateY(-50%);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:200px;color:rgba(0,0,0,.06);
+  letter-spacing:-8px;pointer-events:none;
+}
+.wa-cta-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:2rem;position:relative;z-index:1;
+}
+.wa-cta-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(32px,5vw,52px);
+  color:#000;text-transform:uppercase;
+  letter-spacing:-1px;line-height:.92;
+}
+.wa-cta-sub{
+  font-size:13px;color:rgba(0,0,0,.55);
+  margin-top:1rem;max-width:360px;line-height:1.6;
+}
+.btn-wa-cta{
+  background:#000;color:var(--gold);border:none;
+  padding:16px 36px;font-size:13px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  display:flex;align-items:center;gap:10px;flex-shrink:0;
+  transition:background .2s;
+}
+.btn-wa-cta:hover{background:#111}
+
+/* ── FOOTER ── */
+footer{
+  background:#000;padding:3rem 2.5rem 1.5rem;
+  border-top:2px solid var(--gold);
+}
+.footer-top{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;
+  gap:3rem;margin-bottom:3rem;
+}
+.footer-brand-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;color:var(--white);
+  letter-spacing:4px;margin-bottom:.75rem;
+}
+.footer-tagline{
+  font-size:12px;color:var(--muted);
+  line-height:1.8;max-width:220px;
+  margin-bottom:1.5rem;
+}
+.footer-phone{
+  font-size:13px;color:var(--gold);
+  font-weight:700;letter-spacing:1px;
+}
+.footer-socials{display:flex;gap:8px;margin-top:1rem}
+.social-pill{
+  background:var(--dark3);border:1px solid var(--border);
+  color:var(--muted);padding:6px 14px;
+  font-size:9px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;cursor:pointer;
+  transition:border-color .15s,color .15s;
+}
+.social-pill:hover{border-color:var(--gold);color:var(--gold)}
+.footer-col-title{
+  font-size:9px;color:var(--white);font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:1.25rem;
+  padding-bottom:.75rem;
+  border-bottom:1px solid var(--border);
+}
+.footer-link{
+  display:block;font-size:12px;color:var(--muted);
+  text-decoration:none;line-height:2.5;
+  transition:color .15s;
+}
+.footer-link:hover{color:var(--gold)}
+.footer-bottom{
+  max-width:1100px;margin:0 auto;
+  border-top:1px solid var(--border);
+  padding-top:1.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-copy{font-size:10px;color:var(--muted2);letter-spacing:1px}
+.footer-mgia{font-size:10px;color:var(--muted2);letter-spacing:1px}
+.footer-mgia span{color:var(--gold);font-weight:700}
+
+/* ── WA FLOAT ── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:999;cursor:pointer;
+}
+.wa-icon-wrap{
+  width:56px;height:56px;background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-icon-wrap:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.55)}
+.wa-badge{
+  position:absolute;top:-3px;right:-3px;
+  width:20px;height:20px;background:var(--gold);border-radius:50%;
+  border:2px solid #000;
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;color:#000;
+  animation:popbadge 2s ease-in-out infinite;
+}
+@keyframes popbadge{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+/* ── WA POPUP ── */
+.wa-popup{
+  position:fixed;bottom:96px;right:28px;
+  width:300px;
+  background:#0D0D0D;
+  border:1px solid var(--dark4);
+  z-index:998;
+  transform-origin:bottom right;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),opacity .2s;
+  box-shadow:0 12px 40px rgba(0,0,0,.7);
+}
+.wa-popup.hidden{transform:scale(.8) translateY(10px);opacity:0;pointer-events:none}
+.wa-popup-head{
+  background:var(--gold);padding:13px 15px;
+  display:flex;align-items:center;gap:12px;
+}
+.wa-avatar{
+  width:38px;height:38px;background:rgba(0,0,0,.2);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:14px;color:#000;flex-shrink:0;
+}
+.wa-head-name{font-size:13px;font-weight:700;color:#000}
+.wa-head-status{
+  font-size:10px;color:rgba(0,0,0,.55);
+  display:flex;align-items:center;gap:5px;margin-top:2px;
+}
+.wa-online-dot{width:6px;height:6px;background:#000;border-radius:50%;opacity:.5}
+.wa-close{
+  margin-left:auto;cursor:pointer;color:rgba(0,0,0,.5);
+  font-size:20px;line-height:1;padding:2px 4px;transition:color .15s;
+}
+.wa-close:hover{color:#000}
+.wa-body{padding:14px}
+.wa-timestamp{font-size:9px;color:var(--muted2);letter-spacing:1px;text-align:center;margin-bottom:12px;text-transform:uppercase}
+.wa-bubble{
+  background:var(--dark3);
+  border-radius:0 10px 10px 10px;
+  padding:11px 13px;
+  font-size:12px;color:var(--white);
+  line-height:1.65;margin-bottom:12px;
+  position:relative;
+}
+.wa-bubble::before{
+  content:'';position:absolute;top:0;left:-7px;
+  border:7px solid transparent;
+  border-right-color:var(--dark3);border-top:none;
+}
+.wa-bubble strong{color:var(--gold)}
+.wa-bubble-out{
+  background:#1a2612;
+  border-radius:10px 0 10px 10px;
+  border:1px solid rgba(37,211,102,.2);
+  padding:9px 13px;
+  font-size:12px;color:var(--white);
+  line-height:1.65;margin-bottom:10px;text-align:right;
+}
+.wa-quick-label{font-size:9px;color:var(--muted2);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.wa-quick{
+  display:block;width:100%;
+  background:var(--dark3);border:1px solid var(--border);
+  color:rgba(245,242,236,.6);padding:9px 12px;
+  font-size:11px;text-align:left;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  letter-spacing:.3px;margin-bottom:6px;
+  transition:border-color .15s,color .15s;
+}
+.wa-quick:hover{border-color:var(--gold);color:var(--white)}
+.wa-input-row{display:flex;margin-top:12px}
+.wa-input{
+  flex:1;background:var(--dark3);border:1px solid var(--border);
+  border-right:none;color:var(--white);
+  padding:10px 12px;font-size:11px;outline:none;
+  font-family:'DM Sans',sans-serif;
+  transition:border-color .15s;
+}
+.wa-input:focus{border-color:var(--gold)}
+.wa-send{
+  background:var(--gold);color:#000;border:none;
+  padding:10px 14px;cursor:pointer;
+  transition:background .15s;
+}
+.wa-send:hover{background:var(--gold-light)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{display:none}
+  .hero-left{min-height:100vh}
+  .collections-grid{grid-template-columns:1fr 1fr}
+  .col-card.featured{grid-row:span 1}
+  .sets-grid{grid-template-columns:1fr 1fr}
+  .identity-inner{grid-template-columns:1fr}
+  .identity-visual{display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .wa-cta-inner{flex-direction:column;align-items:flex-start}
+  .nav-links{display:none}
+}
+@media(max-width:560px){
+  .collections-grid{grid-template-columns:1fr}
+  .sets-grid{grid-template-columns:1fr 1fr}
+  .hero-title{font-size:54px}
+  .footer-top{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .process-step{border-right:none;border-bottom:1px solid var(--border)}
+}
+</style>
+</head>
+<body>
+
+<!-- WA FLOAT -->
+<div class="wa-float" id="wa-float" onclick="toggleWA()">
+  <div class="wa-badge" id="wa-badge">1</div>
+  <div class="wa-icon-wrap">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </div>
+</div>
+
+<!-- WA POPUP -->
+<div class="wa-popup hidden" id="wa-popup">
+  <div class="wa-popup-head">
+    <div class="wa-avatar">JP</div>
+    <div>
+      <div class="wa-head-name">JP STUDIOS</div>
+      <div class="wa-head-status"><div class="wa-online-dot"></div>En linea ahora</div>
+    </div>
+    <div class="wa-close" onclick="toggleWA()">&times;</div>
+  </div>
+  <div class="wa-body" id="wa-body">
+    <div class="wa-timestamp">Hoy</div>
+    <div class="wa-bubble">
+      Qué onda! Bienvenido a <strong>JP STUDIOS</strong>. ⚔️<br><br>
+      Diseños que destacan, no es moda, es actitud. En qué te puedo ayudar?
+    </div>
+    <div class="wa-quick-label">Preguntas frecuentes</div>
+    <button class="wa-quick" onclick="setMsg('Quiero ver las colecciones disponibles')">Ver colecciones disponibles</button>
+    <button class="wa-quick" onclick="setMsg('Cuáles son las tallas disponibles?')">Tallas disponibles</button>
+    <button class="wa-quick" onclick="setMsg('Cómo hago un pedido?')">Cómo hacer un pedido</button>
+    <button class="wa-quick" onclick="setMsg('Cuánto tarda el envío?')">Tiempos de envío</button>
+    <div class="wa-input-row">
+      <input class="wa-input" id="wa-msg" type="text" placeholder="Escribe tu mensaje..." onkeydown="if(event.key==='Enter')sendWA()"/>
+      <button class="wa-send" onclick="sendWA()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    &nbsp;&nbsp;&nbsp;&nbsp;JP STUDIOS ⚔ STREETWEAR CON IDENTIDAD &nbsp;&bull;&nbsp;
+    DISEÑOS QUE DESTACAN &nbsp;&bull;&nbsp;
+    NO ES MODA, ES ACTITUD &nbsp;&bull;&nbsp;
+    LIMITED CREATION OVER MASS PRODUCTION &nbsp;&bull;&nbsp;
+    IDENTITY OVER HYPE &nbsp;&bull;&nbsp;
+    PEDIDOS AL +52 246 299 9009 &nbsp;&bull;&nbsp;
+    JP STUDIOS ⚔ STREETWEAR CON IDENTIDAD &nbsp;&bull;&nbsp;
+    DISEÑOS QUE DESTACAN &nbsp;&bull;&nbsp;
+    NO ES MODA, ES ACTITUD &nbsp;&bull;&nbsp;
+    LIMITED CREATION OVER MASS PRODUCTION &nbsp;&bull;&nbsp;
+    IDENTITY OVER HYPE &nbsp;&bull;&nbsp;
+    PEDIDOS AL +52 246 299 9009 &nbsp;&bull;&nbsp;
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="logo-mark"><span>JP</span></div>
+    <div class="logo-text">JP STUDIOS</div>
+  </a>
+  <div class="nav-links">
+    <a href="#colecciones" class="nav-link">Colecciones</a>
+    <a href="#sets" class="nav-link">Sets</a>
+    <a href="#identidad" class="nav-link">Nosotros</a>
+    <a href="#contacto" class="nav-link">Contacto</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-cart" id="cart-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      BAG (<span id="cart-n">0</span>)
+    </button>
+    <button class="btn-wa-nav" onclick="toggleWA()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="black"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      CHAT
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-left-bg"></div>
+    <div class="hero-tag">Streetwear con identidad</div>
+    <div class="hero-title">
+      NOT A<br>
+      BRAND.<br>
+      A <em>MINDSET.</em>
+    </div>
+    <p class="hero-sub">
+      Limited creation over mass production.<br>
+      Identity over hype. This isn't fast fashion,<br>
+      it's a mindset in motion.
+    </p>
+    <div class="hero-cta-row">
+      <button class="btn-primary" onclick="scrollTo('colecciones')">VER COLECCIONES</button>
+      <button class="btn-outline" onclick="toggleWA()">HACER PEDIDO</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-bg"></div>
+    <div class="hero-right-pattern"></div>
+    <div class="hero-grid-text">JP</div>
+    <div class="hero-right-content">
+      <div class="hero-quote">
+        MOVES<br>
+        THROUGH<br>
+        <span>THE CITY</span><br>
+        <span>WITH INSTINCT.</span>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-n">001</div>
+          <div class="hero-stat-l">Coleccion Activa</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">100%</div>
+          <div class="hero-stat-l">Diseño Original</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-n">MX</div>
+          <div class="hero-stat-l">Hecho en Mexico</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<div class="manifesto">
+  <div class="manifesto-inner">
+    <div class="manifesto-label">El manifiesto JP Studios</div>
+    <div class="manifesto-text">
+      LIMITED<br>
+      CREATION<br>
+      <em>OVER</em><br>
+      MASS<br>
+      PRODUCTION.
+    </div>
+    <p class="manifesto-sub">
+      Cada pieza tiene una historia. Cada diseño tiene una intención. No fabricamos ropa, creamos identidad. Si usas JP Studios, ya sabes lo que eso significa.
+    </p>
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+<section class="collections" id="colecciones">
+  <div class="section-header">
+    <div class="section-label">⚔ Colecciones Disponibles</div>
+    <div class="section-title">DISEÑOS QUE DESTACAN</div>
+    <p class="section-desc">Cada coleccion tiene su propia personalidad. Elige tu identidad.</p>
+  </div>
+  <div class="collections-grid">
+
+    <!-- FEATURED -->
+    <div class="col-card featured theme-dark" onclick="addCart()">
+      <div class="col-badge">NEW</div>
+      <div class="col-bg" style="background:url('https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=700&q=80&fit=crop') center/cover no-repeat">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 60%,rgba(0,0,0,.1) 100%)"></div>
+      </div>
+      <div class="col-accent" style="background:var(--gold)"></div>
+      <div class="col-overlay"></div>
+      <div class="col-body">
+        <div class="col-tag">Coleccion Principal</div>
+        <div class="col-name">IDENTITY<br>SERIES</div>
+        <p class="col-desc">La coleccion que define la marca. Graficos bold, siluetas oversized. Piezas que hablan sin decir una palabra.</p>
+        <div class="col-meta">
+          <div class="col-price">$580 MXN</div>
+          <div class="col-variants">
+            <div class="variant-dot" style="background:#1a1a1a" title="Negro"></div>
+            <div class="variant-dot" style="background:#2c2c2c" title="Carbon"></div>
+            <div class="variant-dot" style="background:#3d2b1a" title="Cafe"></div>
+            <div class="variant-dot" style="background:#C9A84C" title="Oro"></div>
+          </div>
+        </div>
+        <button class="col-btn" onclick="addCart()">AGREGAR AL BAG</button>
+      </div>
+    </div>
+
+    <!-- URBAN -->
+    <div class="col-card theme-mid" onclick="addCart()">
+      <div class="col-bg" style="background:url('https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=700&q=80&fit=crop') center top/cover no-repeat">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.15) 100%)"></div>
+      </div>
+      <div class="col-accent" style="background:#444"></div>
+      <div class="col-overlay"></div>
+      <div class="col-body">
+        <div class="col-tag">Set Urbano</div>
+        <div class="col-name">URBAN<br>MINDSET</div>
+        <p class="col-desc">Para los que viven en la calle. Graficos que narran la ciudad.</p>
+        <div class="col-meta">
+          <div class="col-price">$520 MXN</div>
+          <div class="col-variants">
+            <div class="variant-dot" style="background:#111"></div>
+            <div class="variant-dot" style="background:#1c1c1c"></div>
+            <div class="variant-dot" style="background:#f5f2ec"></div>
+          </div>
+        </div>
+        <button class="col-btn">VER SET</button>
+      </div>
+    </div>
+
+    <!-- ATTITUDE -->
+    <div class="col-card theme-warm" onclick="addCart()">
+      <div class="col-badge outline">LTD</div>
+      <div class="col-bg" style="background:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700&q=80&fit=crop') center/cover no-repeat">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.4) 55%,rgba(10,8,5,.3) 100%)"></div>
+      </div>
+      <div class="col-accent" style="background:var(--gold)"></div>
+      <div class="col-overlay"></div>
+      <div class="col-body">
+        <div class="col-tag">Edicion Limitada</div>
+        <div class="col-name">ATTITUDE<br>COLLECTION</div>
+        <p class="col-desc">No reprinted. Not repeated. Una sola corrida. Cuando se acaba, se acaba.</p>
+        <div class="col-meta">
+          <div class="col-price">$650 MXN</div>
+          <div class="col-variants">
+            <div class="variant-dot" style="background:#0a0a0a"></div>
+            <div class="variant-dot" style="background:#C9A84C"></div>
+          </div>
+        </div>
+        <button class="col-btn">CONSEGUIR</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IDENTITY -->
+<section class="identity" id="identidad">
+  <div class="identity-inner">
+    <div class="identity-visual">
+      <div class="logo-large">JP</div>
+      <div class="logo-center">
+        <div class="logo-jp">JP</div>
+        <div class="logo-studios">STUDIOS</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Quiénes somos</div>
+      <div class="identity-phrase">
+        STREETWEAR<br>CON <span>IDENTIDAD</span>
+      </div>
+      <div class="identity-divider"></div>
+      <div class="identity-list">
+        <div class="identity-item">
+          <div class="identity-icon">⚔</div>
+          <div>
+            <div class="identity-item-title">No es moda, es actitud</div>
+            <div class="identity-item-sub">Cada pieza es una declaracion. Usas JP Studios porque sabes quién eres, no porque alguien te lo dijo.</div>
+          </div>
+        </div>
+        <div class="identity-item">
+          <div class="identity-icon">◈</div>
+          <div>
+            <div class="identity-item-title">Diseños que destacan</div>
+            <div class="identity-item-sub">Graficos propios, creados desde cero. Sin templates, sin copias. Identidad visual que te hace diferente.</div>
+          </div>
+        </div>
+        <div class="identity-item">
+          <div class="identity-icon">▲</div>
+          <div>
+            <div class="identity-item-title">Hecho en Mexico</div>
+            <div class="identity-item-sub">Produccion local, calidad sin compromiso. Cada pieza pasa por JP Studios antes de llegar a ti.</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="toggleWA()">HACER UN PEDIDO</button>
+    </div>
+  </div>
+</section>
+
+<!-- SETS INDIVIDUALES -->
+<section class="sets" id="sets">
+  <div class="section-header">
+    <div class="section-label">Catalogo Completo</div>
+    <div class="section-title">TODOS LOS SETS</div>
+    <p class="section-desc">Piezas individuales y bundles. Variaciones por color y talla disponibles.</p>
+  </div>
+  <div class="sets-grid">
+
+    <div class="set-card theme-dark">
+      <div class="set-bg" style="background:url('https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500&q=80&fit=crop') center/cover no-repeat">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.15) 100%)"></div>
+        <div class="set-stock">S / M / L / XL</div>
+      </div>
+      <div class="set-body">
+        <div class="set-collection">Identity Series</div>
+        <div class="set-name">Tee Identity Oversized</div>
+        <div class="set-footer">
+          <div class="set-price">$380 MXN</div>
+          <button class="set-btn" onclick="addCart()">+ BAG</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="set-card">
+      <div class="set-bg" style="background:url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80&fit=crop') center/cover no-repeat">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.15) 100%)"></div>
+        <div class="set-stock">M / L / XL</div>
+      </div>
+      <div class="set-body">
+        <div class="set-collection">Identity Series</div>
+        <div class="set-name">Hoodie JP Signature</div>
+        <div class="set-footer">
+          <div class="set-price">$680 MXN</div>
+          <button class="set-btn" onclick="addCart()">+ BAG</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="set-card">
+      <div class="set-bg" style="background:url('https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&q=80&fit=crop') center/cover no-repeat">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.15) 100%)"></div>
+        <div class="set-stock" style="color:var(--gold)">BUNDLE 2x1</div>
+      </div>
+      <div class="set-body">
+        <div class="set-collection">Starter Pack</div>
+        <div class="set-name">Tee + Hoodie Identity</div>
+        <div class="set-footer">
+          <div class="set-price">$980 MXN</div>
+          <button class="set-btn" onclick="addCart()">+ BAG</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="set-card">
+      <div class="set-bg" style="background:url('https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?w=500&q=80&fit=crop') center/cover no-repeat">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.15) 100%)"></div>
+        <div class="set-stock">S / M / L</div>
+      </div>
+      <div class="set-body">
+        <div class="set-collection">Urban Mindset</div>
+        <div class="set-name">Tee Urban Graphic</div>
+        <div class="set-footer">
+          <div class="set-price">$420 MXN</div>
+          <button class="set-btn" onclick="addCart()">+ BAG</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-inner">
+    <div class="section-label">Como funciona</div>
+    <div class="section-title">DE LA IDEA A TI</div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-n">01</div>
+        <div class="process-title">Elige tu pieza</div>
+        <p class="process-desc">Explora el catalogo, encuentra el diseño que te representa. Cada pieza tiene su historia.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-n">02</div>
+        <div class="process-title">Contáctanos</div>
+        <p class="process-desc">Escríbenos por WhatsApp con tu pedido, talla y color. Confirmamos disponibilidad al instante.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-n">03</div>
+        <div class="process-title">Pago seguro</div>
+        <p class="process-desc">Transferencia, OXXO o pago en línea. Tu pedido queda confirmado en minutos.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-n">04</div>
+        <div class="process-title">Envío a todo MX</div>
+        <p class="process-desc">Empaquetamos con cuidado y enviamos a toda la república. Seguimiento incluido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WA CTA -->
+<div class="wa-cta" id="contacto">
+  <div class="wa-cta-inner">
+    <div>
+      <div class="wa-cta-text">
+        HABLA CON<br>
+        NOSOTROS.<br>
+        AHORA.
+      </div>
+      <p class="wa-cta-sub">Dudas, pedidos, tallas, envíos. Respondemos rápido porque así somos. +52 246 299 9009</p>
+    </div>
+    <button class="btn-wa-cta" onclick="toggleWA()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      ABRIR CHAT
+    </button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">JP STUDIOS</div>
+      <p class="footer-tagline">Streetwear con identidad. Diseños que destacan. No es moda, es actitud.</p>
+      <div class="footer-phone">+52 246 299 9009</div>
+      <div class="footer-socials">
+        <span class="social-pill">IG</span>
+        <span class="social-pill">TK</span>
+        <span class="social-pill">WA</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Colecciones</div>
+      <a href="#colecciones" class="footer-link">Identity Series</a>
+      <a href="#colecciones" class="footer-link">Urban Mindset</a>
+      <a href="#colecciones" class="footer-link">Attitude Collection</a>
+      <a href="#sets" class="footer-link">Starter Packs</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Info</div>
+      <a href="#" class="footer-link">Guia de tallas</a>
+      <a href="#" class="footer-link">Envios</a>
+      <a href="#" class="footer-link">Devoluciones</a>
+      <a href="#identidad" class="footer-link">Nosotros</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Contacto</div>
+      <a href="#" class="footer-link">WhatsApp directo</a>
+      <a href="#" class="footer-link">Instagram</a>
+      <a href="#" class="footer-link">TikTok</a>
+      <a href="#" class="footer-link">Pedidos mayoreo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 JP STUDIOS. TODOS LOS DERECHOS RESERVADOS.</div>
+    <div class="footer-mgia">TECH & DIGITAL: <span>MGIA SOLUCIONES</span></div>
+  </div>
+</footer>
+
+<script>
+// Cart
+let cartN=0;
+function addCart(){
+  cartN++;
+  document.getElementById('cart-n').textContent=cartN;
+  const b=document.getElementById('cart-btn');
+  b.style.borderColor='var(--gold)';b.style.color='var(--gold)';
+  setTimeout(()=>{b.style.borderColor='';b.style.color='';},500);
+}
+
+// WA Popup
+let waOpen=false;
+function toggleWA(){
+  waOpen=!waOpen;
+  const p=document.getElementById('wa-popup');
+  const badge=document.getElementById('wa-badge');
+  if(waOpen){p.classList.remove('hidden');badge.style.display='none';}
+  else p.classList.add('hidden');
+}
+function setMsg(txt){
+  document.getElementById('wa-msg').value=txt;
+  document.getElementById('wa-msg').focus();
+}
+const autoReplies={
+  'tallas':'Manejamos XS, S, M, L, XL y XXL en la mayoria de piezas. Cual es tu medida habitual? Te recomiendo la ideal.',
+  'coleccion':'Tenemos activa la Identity Series, Urban Mindset y la edicion limitada Attitude Collection. Cual te llama mas la atencion?',
+  'pedido':'Super! Para hacer tu pedido necesito: pieza, talla, color y tu direccion de envio. Cuéntame que quieres llevar.',
+  'envio':'Enviamos a toda la republica mexicana. El tiempo de entrega es de 3-5 dias habiles una vez confirmado el pago.',
+  'precio':'Los precios van de $380 a $980 MXN dependiendo la pieza. Que estas buscando?'
+};
+function sendWA(){
+  const input=document.getElementById('wa-msg');
+  const msg=input.value.trim();
+  if(!msg)return;
+  const body=document.getElementById('wa-body');
+  const sendRow=body.querySelector('.wa-input-row');
+  const out=document.createElement('div');
+  out.className='wa-bubble-out';out.textContent=msg;
+  body.insertBefore(out,sendRow);
+  input.value='';
+  setTimeout(()=>{
+    const lower=msg.toLowerCase();
+    let reply='Gracias por escribir! Ahora mismo te atendemos. También puedes llamarnos al +52 246 299 9009.';
+    for(const k in autoReplies){if(lower.includes(k)){reply=autoReplies[k];break;}}
+    const bot=document.createElement('div');
+    bot.className='wa-bubble';bot.textContent=reply;
+    body.insertBefore(bot,sendRow);
+    body.scrollTop=9999;
+  },800);
+}
+
+// Smooth scroll
+function scrollTo(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+// Nav scroll effect
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('navbar');
+  if(window.scrollY>80){nav.style.background='rgba(0,0,0,.97)';}
+  else{nav.style.background='rgba(0,0,0,.92)';}
+});
+
+// Auto open WA after 4s
+setTimeout(()=>{if(!waOpen)toggleWA();},4000);
+</script>
+</body>
+</html>
